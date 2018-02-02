@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { AppState, Todo } from './app.state';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  title = 'Praveen Gupta';
+  constructor(private store:Store<AppState>){
+    this.store.dispatch({
+      type:"LOAD_TODO"
+    })
+  }
 }
