@@ -3,7 +3,7 @@ import { Action } from "@ngrx/store"
 import {Effect,Actions} from "@ngrx/effects"
 import { Injectable } from "@angular/core";
 import {Observable} from "rxjs/Rx"
-import { setTimeout } from "timers";
+
 
 
 
@@ -25,6 +25,8 @@ export function todoReducer(state: Todo[] = [], action) {
             return [...state,...action.payload];
         case REMOVE_TODO:
             return state.filter(x=>x.id!=action.payload.id)
+        case REMOVE_MULTI_TODO:
+            return []
         default:
             return state;
     }

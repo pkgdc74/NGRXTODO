@@ -30,6 +30,9 @@ export class TodoComponent implements OnInit {
     })
   }
   removeAll(){
+    this.store.dispatch({
+      type:"REMOVE_MULTI_TODO"
+    })
   }
   ngOnInit() { 
   }
